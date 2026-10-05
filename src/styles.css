@@ -9,3 +9,6 @@
 /* visual refinement */
 
 .hero{min-height:90vh}
+
+.final{padding:140px 7vw}.final h2{font-size:clamp(64px,9vw,132px);line-height:.84;letter-spacing:-8px}
+.strategyService,.serviceFix{padding:120px 7vw;min-height:80vh}.strategyHero h1,.serviceFix h1{font-size:clamp(62px,9vw,135px);line-height:.84;letter-spacing:-8px;margin:20px 0}
