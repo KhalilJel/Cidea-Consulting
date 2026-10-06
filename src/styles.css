@@ -12,3 +12,8 @@
 
 .final{padding:140px 7vw}.final h2{font-size:clamp(64px,9vw,132px);line-height:.84;letter-spacing:-8px}
 .strategyService,.serviceFix{padding:120px 7vw;min-height:80vh}.strategyHero h1,.serviceFix h1{font-size:clamp(62px,9vw,135px);line-height:.84;letter-spacing:-8px;margin:20px 0}
+
+/* Website Intelligence P1 accessibility fixes */
+p:not(.eyebrow){font-size:max(14px,1em)}
+.quiet{color:#a9b7c6}
+nav a,.actions button,footer a{min-height:44px;display:inline-flex;align-items:center}
