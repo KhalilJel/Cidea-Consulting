@@ -88,5 +88,11 @@ jobs:
           const norwegianHeading = await page.locator('main h1').first().textContent();
           if (!norwegianHeading?.includes('AI-mulighetsanalyse')) throw new Error('Norwegian service page translation is missing: ' + norwegianHeading);
           console.log('PASS service page switches between Norwegian and English');
+
+          await page.goto(baseUrl + '/', { waitUntil: 'networkidle' });
+          await page.locator('header .actions button').click();
+          const homepageHeading = await page.locator('main h2').first().textContent();
+          if (!homepageHeading?.includes('AI is not the strategy. Value is the strategy.')) throw new Error('Homepage English translation is missing: ' + homepageHeading);
+          console.log('PASS homepage key message switches to English');
           await browser.close();
           EOF
