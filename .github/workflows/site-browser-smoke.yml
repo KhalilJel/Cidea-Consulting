@@ -86,7 +86,7 @@ jobs:
           if (!englishHeading?.includes('Find the AI opportunities worth pursuing')) throw new Error('English service page translation is missing: ' + englishHeading);
           await page.locator('header .actions button').click();
           const norwegianHeading = await page.locator('main h1').first().textContent();
-          if (!norwegianHeading?.includes('Finn hvor AI faktisk kan skape verdi')) throw new Error('Norwegian service page translation is missing: ' + norwegianHeading);
+          if (!norwegianHeading?.includes('AI-mulighetsanalyse')) throw new Error('Norwegian service page translation is missing: ' + norwegianHeading);
           console.log('PASS service page switches between Norwegian and English');
           await browser.close();
           EOF
