@@ -43,7 +43,7 @@ jobs:
           const sitemapResponse = await page.request.get(baseUrl + '/sitemap.xml');
           if (!sitemapResponse.ok()) throw new Error('sitemap.xml is not accessible');
           const sitemapText = await sitemapResponse.text();
-          const sitemapPaths = [...sitemapText.matchAll(/<loc>https:\/\/cideaconsulting\\.com([^<]*)<\/loc>/g)].map(match => match[1] || '/');
+          const sitemapPaths = [...sitemapText.matchAll(/<loc>https:\/\/cideaconsulting[.]com([^<]*)<\/loc>/g)].map(match => match[1] || '/');
           const expectedSitemapPaths = new Set(["/","/ai-opportunity","/ai-opportunity-reports","/ai-business-workshops","/ai-implementation","/ai-agent-systems","/blog","/blog/hvor-kan-ai-skape-verdi-i-en-bedrift","/blog/ai-agent-vs-chatbot","/blog/hvordan-finne-gode-ai-use-cases","/blog/hvordan-beregne-roi-pa-ai"]);
           for (const path of expectedSitemapPaths) if (!sitemapPaths.includes(path)) throw new Error('Missing sitemap URL: ' + path);
           for (const path of sitemapPaths) if (!expectedSitemapPaths.has(path)) throw new Error('Unexpected or stale sitemap URL: ' + path);
