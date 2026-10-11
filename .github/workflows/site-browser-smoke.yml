@@ -34,7 +34,7 @@ jobs:
           import { chromium } from 'playwright';
 
           const baseUrl = 'http://127.0.0.1:5173';
-          const routes = ['/', '/ai-opportunity', '/ai-opportunity-reports', '/ai-business-workshops', '/ai-agent-systems', '/blog', '/blog/hvor-kan-ai-skape-verdi-i-en-bedrift'];
+          const routes = ['/', '/ai-opportunity', '/ai-opportunity-reports', '/ai-business-workshops', '/ai-implementation', '/ai-agent-systems', '/blog', '/blog/hvor-kan-ai-skape-verdi-i-en-bedrift', '/blog/ai-agent-vs-chatbot', '/blog/hvordan-finne-gode-ai-use-cases', '/blog/hvordan-beregne-roi-pa-ai'];
           const browser = await chromium.launch({ headless: true });
           const page = await browser.newPage({ viewport: { width: 390, height: 844 } });
           const errors = [];
