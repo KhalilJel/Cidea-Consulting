@@ -98,5 +98,12 @@ jobs:
           const homepageHeading = await page.locator('main h2').first().textContent();
           if (!homepageHeading?.includes('AI is not the strategy. Value is the strategy.')) throw new Error('Homepage English translation is missing: ' + homepageHeading);
           console.log('PASS homepage key message switches to English');
+
+          await page.goto(baseUrl + '/blog/hvor-kan-ai-skape-verdi-i-en-bedrift', { waitUntil: 'networkidle' });
+          await page.locator('header .actions button').click();
+          const articleHeading = await page.locator('main h1').first().textContent();
+          if (!articleHeading?.includes('Where can AI create value in a business?')) throw new Error('English article translation is missing: ' + articleHeading);
+          await page.waitForFunction(() => document.title.includes('Where can AI create value in a business?'));
+          console.log('PASS article content and SEO title switch to English');
           await browser.close();
           EOF
