@@ -94,6 +94,7 @@ jobs:
           const norwegianHeading = await page.locator('main h1').first().textContent();
           if (!norwegianHeading?.includes('AI-mulighetsanalyse')) throw new Error('Norwegian service page translation is missing: ' + norwegianHeading);
           console.log('PASS service page switches between Norwegian and English');
+          await page.locator('header .actions button').click();
           await page.waitForFunction(() => document.title.includes('AI opportunity assessment'));
           const serviceDescription = await page.locator('meta[name="description"]').getAttribute('content');
           if (!serviceDescription?.includes('Identify where AI can improve workflows')) throw new Error('English service metadata is missing: ' + serviceDescription);
