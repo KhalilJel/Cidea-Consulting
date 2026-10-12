@@ -25,3 +25,8 @@ nav a,.actions button,footer a{min-height:44px;display:inline-flex;align-items:c
 @media(max-width:700px){header{gap:10px}.menuToggle{display:inline-flex;align-items:center;justify-content:center;min-height:44px;order:3}.actions{margin-left:auto;gap:8px}.site header nav{display:none}.site header nav.navOpen{display:flex;position:absolute;top:67px;left:0;right:0;margin:0;padding:16px 6vw 24px;background:var(--bg);border-bottom:1px solid var(--line);flex-direction:column;align-items:stretch;gap:0;z-index:30}.site header nav.navOpen a{display:flex;align-items:center;min-height:48px;border-bottom:1px solid var(--line);font-size:13px}.site header nav.navOpen a:last-child{border-bottom:0}}
 @media(max-width:420px){header{gap:8px}.logo{font-size:17px;white-space:nowrap}.actions{gap:4px}.actions button{min-width:34px;min-height:44px}.navCta{display:none}.menuToggle{padding:9px 10px;white-space:nowrap}}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}}
+
+/* Content-first process rows: remove blank label column and tighten spacing. */
+.methodList>div{grid-template-columns:minmax(0,1fr) 1.2fr;gap:25px}.methodList h3{margin:0}.strategySteps span{font:9px "DM Mono";color:#58d8bd}.strategySteps h3{margin:28px 0 15px}.strategyIndex{gap:12px}.strategyIndex strong{margin:0}.articleGrid h3{margin-top:0}.articleGrid a{gap:8px}.articleGrid b{margin-top:auto}
+@media(max-width:1050px){.methodList>div{grid-template-columns:1fr 1.2fr}.methodList p{grid-column:auto}}
+@media(max-width:700px){.methodList>div{grid-template-columns:1fr;gap:12px}.methodList p{grid-column:auto}.strategySteps h3{margin-top:22px}}
